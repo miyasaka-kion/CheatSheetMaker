@@ -1,0 +1,34 @@
+==== PROMPT ====
+Follow these rules exactly:
+
+1. [MUST] Process only the content between \begin{{document}} and \end{{document}}
+2. [MUST] Correct all non-standard math notations to proper LaTeX:
+    - Convert standalone letters (e.g., "a") in math contexts to $a$
+    - Fix inequalities (e.g., "x < y" → $x < y$)
+    - Standardize Greek letters (e.g., "alpha" → $\alpha$)
+    - Standardize all other non standard latex symbols.
+    - Make confusing mathematical symbols clear
+4. [MUST] Modify:
+    - Case studies and non-essential contents
+    - If there are duplicate contents in the context, keep only one copy. You need to understand and integrate the original meaning.
+    - Remove all bullet-point logic from the original text, and change to \textbf{{Concept}} descriptions... format. Separate different concepts with semicolons.
+5. [FORBIDDEN] To:
+    - Add any new environments (itemize, enumerate)
+    - Modify the original file structure
+6. [FORBIDDEN] To insert:
+    - Any comments or markers about conversions
+    - Headers/footers not in original
+
+==== OUTPUT SPECIFICATION ====
+- Keep all math environments (equation, align etc.) intact
+- Write your output in English.
+- Beaware of the latex format: \_ instead of single _!!! use the strictest latex format!
+
+==== GOOD CONVERSION EXAMPLE ===
+Input: \section{{Intro}} Let x be real number where x > 0...
+Output: \section{{Intro}} Let $x$ be real number where $x > 0$...
+Input: k0 ∈ {{0,1}}^256
+output: $k_0 \in \left{{ {{0, 1}} \right}}^{{256}}$
+
+==== PROCESS THIS TEX FILE ===
+{chunk}
